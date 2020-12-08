@@ -5,6 +5,7 @@ body {
   font-family: "Acer Foco", "Trebuchet MS", Arial, sans-serif;
   font-size: 1rem;
   color: #666;
+  margin: 0;
 }
 
 img {
@@ -20,7 +21,8 @@ img {
 }
 
 .conceptd h3 {
-  font-size: 24px;
+  font-size: 1.5995rem;
+  font-size: calc(1.01vw + 1.044rem);
   text-align: center;
   margin: .5rem 0;
 }
@@ -30,7 +32,8 @@ img {
 }
 
 .conceptd p {
-  font-size: 14px;
+  font-size: 1.117rem;
+  font-size: calc(0.38vw + 0.908rem);
   margin-bottom: 1rem;
     margin-top: 1rem;
     text-align: center;
@@ -38,7 +41,8 @@ img {
 }
 
 .conceptd .col-full p {
-  font-size: 1.3rem;
+  font-size: 1.117rem;
+  font-size: calc(0.38vw + 0.908rem);
   margin-bottom: 1rem;
     margin-top: 1rem;
     text-align: center;
@@ -91,7 +95,11 @@ img {
   align-items: center;
 }
 
-.conceptd .row {
+.conceptd .container {
+  width: 100%;
+}
+
+.conceptd .row.full-width {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -101,30 +109,46 @@ margin: 0;
 padding: 0;
 }
 
-.conceptd .row.reverse {
+.conceptd .row.contained {
   display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
+  flex-direction: column;
+  width: auto;
 height: auto;
 text-align: center;
 margin: 0;
-padding: 0;
+padding: 0 24px;
+}
+
+.conceptd .row.contained.reverse {
+  display: flex;
+  flex-direction: column-reverse;
+  width: auto;
+height: auto;
+text-align: center;
+margin: 0;
+padding: 24px;
 }
 
 .conceptd .row.filled {
   background-color: #f5f5f5;
-  width: calc(100% - 3rem);
-  margin: 1.5rem 0;
-  padding: 1.5rem;
+  width: calc(100% - 48px);
+  margin: 10px 0;
+  padding: 24px;
 }
 
-.conceptd .col-full{
+.conceptd .col-full.text{
+  width: calc(100% - 48px);
+  margin: 0 auto;
+  padding: 48px 24px 24px;
+}
+
+.conceptd .col-full.image{
   width: 100%;
   margin: 0 auto;
-  padding: 0;
+  padding: 24px 0 48px;
 }
 
-.conceptd .col-1-2 {
+.conceptd .col-1-2.text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,8 +157,17 @@ padding: 0;
   padding: 1.5rem 0;
 }
 
+.conceptd .col-1-2.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+}
+
 .conceptd .media {
-  padding: 1.5rem;
+  padding: 0;
 }
 
 .conceptd .media::before {
@@ -148,40 +181,74 @@ padding: 0;
   max-width: 1170px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 34px;
+  padding: 0 10px;
 }
 
-.conceptd .row,
-.conceptd .row.reverse {
+.conceptd .row.full-width {
   display: flex;
-  flex-direction: row;
-  width: calc(100% - 2rem);
+  flex-direction: column;
+  width: auto;
 height: auto;
 text-align: center;
 margin: 0;
-padding: 0 1rem;
+padding: 0 24px;
+}
+
+.conceptd .row.contained,
+.conceptd .row.contained.reverse {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+height: auto;
+text-align: center;
+margin: 0;
+padding: 24px;
 }
 
 .conceptd .row.filled {
   background-color: #f5f5f5;
-  width: calc(100% - 6rem);
-  margin: 1.5rem;
+  width: auto;
+  margin: 24px;
   padding: 1.5rem;
 }
 
-.conceptd .col-full{
+.conceptd .col-full.text{
   width: 100%;
   margin: 0 auto;
-  padding: 0;
+  padding: 48px 0 24px;
 }
 
-.conceptd .col-1-2 {
+.conceptd .col-full.image{
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.conceptd .col-1-2.text {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50%;
   padding: 1.5rem 1rem;
+}
+
+.conceptd .col-1-2.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 0;
+}
+
+.conceptd .media {
+  padding: 0;
+}
+
+.conceptd .media::before {
+  content: '';
+  padding-top: 100%;
 }
 
 }
@@ -192,24 +259,30 @@ padding: 0 1rem;
   max-width: 1170px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 34px;
+  padding: 0 10px;
 }
 
-.conceptd .row,
-.conceptd .row.reverse {
+.conceptd .row.contained,
+.conceptd .row.contained.reverse {
   display: flex;
   flex-direction: row;
-  width: calc(100% - 6rem);
+  width: calc(100% - 96px);
 height: auto;
 text-align: center;
 margin: 0;
-padding: 0 3rem;
+padding: 48px;
 }
 
-.conceptd .col-full{
+.conceptd .col-full.text{
   width: 100%;
   margin: 0 auto;
-  padding: 0;
+  padding: 48px 0 24px;
+}
+
+.conceptd .col-full.image{
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 0 48px;
 }
 
 .conceptd .col-full h2,
@@ -220,7 +293,7 @@ padding: 0 3rem;
     margin-top: 1rem;
 }
 
-.conceptd .col-1-2 {
+.conceptd .col-1-2.text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -229,6 +302,53 @@ padding: 0 3rem;
   padding: 1.5rem 3rem;
 }
 
+.conceptd .col-1-2.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 1.5rem 3rem;
+}
+
+}
+
+@media only screen and (max-width: 1304px) and (min-width: 768px) {
+  .conceptd .row.full-width {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 48px);
+  height: auto;
+  text-align: center;
+  margin: 0;
+  padding: 0 24px;
+  }
+
+  .conceptd .row.filled {
+    background-color: #f5f5f5;
+    width: auto;
+    margin: 24px 0;
+    padding: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1304px) {
+  .conceptd .row.full-width {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  }
+
+  .conceptd .row.filled {
+    background-color: #f5f5f5;
+    width: auto;
+    margin: 24px 0;
+    padding: 1.5rem;
+  }
 }
 
 .conceptd .button {
